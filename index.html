@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen and Paper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Charakter</h1>
+    <input type="file" id="pdfUpload" accept="application/pdf">
+        <div class="container">
+        <div class="pdf-container">
+            <embed id="pdfViewer" type="application/pdf">
+        </div>
+        <div>
+            <div class="charakterstatus-header">
+            </div>
+            <div class="checkbox-container">
+                <table>
+                    <tr>
+                        <th>Gesundheit</th>
+                        <td><input type="number" class="maxValue" value="6" min="0"></td>
+                        <td class="checkbox-container"></td>
+                    </tr>
+                    <tr>
+                        <th>Willenskraft</th>
+                        <td><input type="number" class="maxValue" value="4" min="0"></td>
+                        <td class="checkbox-container"></td>
+                    </tr>
+                    <tr>
+                        <th>Menschlichkeit</th>
+                        <td><input type="number" class="maxValue" value="5" min="0"></td>
+                        <td class="checkbox-container"></td>
+                    </tr>
+                    <tr>
+                        <th>Hunger</th>
+                        <td class="checkbox-container">
+                            <div class="checkbox" data-state="0"></div>
+                            <div class="checkbox" data-state="0"></div>
+                            <div class="checkbox" data-state="0"></div>
+                        </td>
+                        <td><input type="number" id="hungerInput" class="maxValue" value="5" min="0" disabled></td>
+                    </tr>
+                    <tr>
+                        <th>Resonanz</th>
+                        <td>
+                            <input type="text" class="Resonanz" value="">
+                            <input type="hidden" class="maxValue" value="3">
+                        </td>
+                        <td class="checkbox-container"></td>
+                    </tr>
+                    
+                    <tr>
+                        <th>Geld</th>
+                        <td>
+                            <input type="number" id="moneyInput" class="maxValue" value="0" min="0" disabled>
+                        </td>
+                        <td class="calculator-container">
+                            <input type="number" id="amountInput" value="0" min="0">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="notiz-container">
+                <h2>Quest Log</h2>
+                <textarea id="questLog" placeholder="Schreibe hier deine Notizen..." oninput="autoResize(this)"></textarea>
+            </div>
+        </div>
+        <div class="container"> 
+            <button id="saveData">Save</button>
+            <input type="file" id="loadData" accept="application/json">
+         </div>
+    </div>
+
+    <script src="logic.js"></script>
+</body>
+</html>
